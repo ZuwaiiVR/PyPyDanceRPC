@@ -30,5 +30,5 @@ https://github.com/Lachee/discord-rpc-csharp
 # My comments or issues
 It's kinda a mess in the code, but I tried to clean up as much as possible.</br>
 There is a youtube button, to view the current video on youtube, it might in some cases that the youtube video is broken/removed/invalid.</br>
-Will rewrite it again someday. </br>
+Sometimes there could be a parse error, I fill fix this later on. </br></br>
 Thanks pypy & Natsumi-sama!
