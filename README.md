@@ -25,6 +25,8 @@ Newtonsoft.Json
 https://github.com/Lachee/discord-rpc-csharp
 ```
 
-# My comments
-It's kinda a mess in the code, but I tried to clean up as much as possible.
-Thanks pypy & Natsumi-sama
+# My comments or issues
+It's kinda a mess in the code, but I tried to clean up as much as possible.</br>
+There is a youtube button, to view the current video on youtube, it might in some cases that the youtube video is broken/removed/invalid.</br>
+Will rewrite it again someday. </br>
+Thanks pypy & Natsumi-sama!
