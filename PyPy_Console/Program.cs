@@ -279,7 +279,7 @@ namespace PyPy_Console
                                                 Assets = new Assets()
                                                 {
                                                     LargeImageKey = "pypy_",
-                                                    LargeImageText = "PyPy Dance Rich thing by Zuwaii- Available soon on Github",
+                                                    LargeImageText = "PyPy Dance Rich thing by Zuwaii- https://github.com/ZuwaiiVR/PyPyDanceRPC",
                                                     SmallImageKey = logo_
                                                 },
                                                 Buttons = new Button[]
