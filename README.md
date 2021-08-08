@@ -5,9 +5,11 @@
 
 # How to use
 Simple, get the latest release in the release page.
-Extract it, and run it. You need to have discord running ofcourse.
+Extract it, and run it. You need to have discord running ofcourse.</br>
 Run VRChat with command line "--enable-sdk-log-levels" and go to PyPyDance world and play :). It will automatic update your discord rich presence status on each song, and load the latest logfile after a restart of VRChat.
-
+</br>
+After the song has finish playing, status will change to "idle", after 30 seconds, the discord rich presence status will be cleared.
+</br>
 # Config file.
 When there's no config file, the config file will be generated with the following settings.
 
