@@ -5,9 +5,11 @@
 
 # How to use
 Simple, get the latest release in the release page.
-Extract it, and run it. You need to have discord running ofcourse.
+Extract it, and run it. You need to have discord running ofcourse.</br>
 Run VRChat with command line "--enable-sdk-log-levels" and go to PyPyDance world and play :). It will automatic update your discord rich presence status on each song, and load the latest logfile after a restart of VRChat.
-
+</br>
+After the song has finish playing, status will change to "idle", after 30 seconds, the discord rich presence status will be cleared.
+</br>
 # Config file.
 When there's no config file, the config file will be generated with the following settings.
 
@@ -25,5 +27,8 @@ Newtonsoft.Json
 https://github.com/Lachee/discord-rpc-csharp
 ```
 
-# My comments
-It's kinda a mess in the code, but I tried to clean up as much as possible.
+# My comments or issues
+It's kinda a mess in the code, but I tried to clean up as much as possible.</br>
+There is a youtube button, to view the current video on youtube, it might in some cases that the youtube video is broken/removed/invalid.</br>
+Sometimes there could be a parse error, I fill fix this later on. </br></br>
+Thanks pypy & Natsumi-sama!

@@ -14,7 +14,7 @@ namespace PyPy_Console
     class Program
     {
         public static DiscordRpcClient client;
-        static string ver = "v1.0b";
+        static string ver = "v1.0a";
         static string[] logo = {
 " ######          ######          ######                                       ######   ######    #####  ",
 " #     #  #   #  #     #  #   #  #     #    ##    #    #   ####   ######      #     #  #     #  #     # ",
@@ -26,13 +26,9 @@ namespace PyPy_Console
 
         static void CurrentDomain_ProcessExit(object sender, EventArgs e)
         {
-            try
-            {
-                client.Dispose();
-            }
-            catch
-            {
-            }
+            client.Dispose();
+
+
         }
 
         static void Main(string[] args)
@@ -52,7 +48,8 @@ namespace PyPy_Console
             string logpath = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + @"Low\VRChat\VRChat";
             string localpath = System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location);
             var directory = new DirectoryInfo(logpath);
-
+            
+        
             //config file
             bool save = false;
             bool mylogolol = false;
@@ -104,57 +101,42 @@ namespace PyPy_Console
                 }
             }
             //
-            
             if (rpc_) Initialize();
 
             while (true)
             {
                 var logfile = directory.GetFiles("output_log_*.txt", SearchOption.TopDirectoryOnly).OrderByDescending(f => f.LastWriteTime).First();
+                
                 Console.OutputEncoding = System.Text.Encoding.UTF8;
                 Console.WriteLine(logfile.Name);
                 Console.WriteLine();
+               
                 pypymagic(logpath + "\\" + logfile.Name, save, mylogolol, rpc_);
             }
+            //
+
         }
+
 
         public static  void Initialize()
         { 
             client = new DiscordRpcClient(System.Text.Encoding.UTF8.GetString(System.Convert.FromBase64String("ODcyNTU1NDE1MTg2MDcxNTUy")));
+           
             client.OnReady += (sender, e) =>
             {
-                Console.WriteLine("[DRCP] Connected! user {0}", e.User.Username);
+                Console.WriteLine("Connected! user {0}", e.User.Username);
             };
 
             client.OnPresenceUpdate += (sender, e) =>
             {
-             Console.WriteLine("[DRCP] Discord RPC Update!");
+                
+             Console.WriteLine("Discord RPC Update!");
             };
             client.Initialize();
+           
         }
 
-        static string Truncate(string s, int maxLength)
-        {
-            if (Encoding.UTF8.GetByteCount(s) <= maxLength)
-                return s;
-            var cs = s.ToCharArray();
-            int length = 0;
-            int i = 0;
-            while (i < cs.Length)
-            {
-                int charSize = 1;
-                if (i < (cs.Length - 1) && char.IsSurrogate(cs[i]))
-                    charSize = 2;
-                int byteSize = Encoding.UTF8.GetByteCount(cs, i, charSize);
-                if ((byteSize + length) <= maxLength)
-                {
-                    i = i + charSize;
-                    length += byteSize;
-                }
-                else
-                    break;
-            }
-            return s.Substring(0, i);
-        }
+
 
         public static void pypymagic(string filePath,bool saving,bool logo,bool discord)
         {
@@ -183,7 +165,7 @@ namespace PyPy_Console
                     var logfile = directory.GetFiles("output_log_*.txt", SearchOption.TopDirectoryOnly).OrderByDescending(f => f.LastWriteTime).First();
                     if (logfile.Name != filePath.Substring(filePath.LastIndexOf("\\")+1))
                     {
-                        Console.WriteLine("[PYPY] New Logfile Found, restarting..");
+                        Console.WriteLine("New Logfile Found, restarting..");
                         break;
                     }
                     if (clear_presence)
@@ -194,7 +176,7 @@ namespace PyPy_Console
                             {
                                 clear_presence = false;
                                 client.ClearPresence();
-                                Console.WriteLine("[PYPY] Clear Presence due idle");
+                                Console.WriteLine("Clear Presence due idle");
                             }
                         }
                     }
@@ -208,7 +190,7 @@ namespace PyPy_Console
                             clear_presence = true;
                             if (discord)
                             {
-                                Console.WriteLine("[PYPY] Idle");
+                                Console.WriteLine("Idle");
                                 client.SetPresence(new RichPresence()
                                 {
                                     Details = "Idle",
@@ -217,7 +199,7 @@ namespace PyPy_Console
                                     Assets = new Assets()
                                     {
                                         LargeImageKey = "pypy_",
-                                        LargeImageText = "PyPyDance RPC by Zuwaii- https://github.com/ZuwaiiVR/PyPyDanceRPC",
+                                        LargeImageText = "PyPy Dance Rich thing by Zuwaii- https://github.com/ZuwaiiVR/PyPyDanceRPC",
                                         SmallImageKey = logo_
                                     },
                                 });
@@ -277,17 +259,17 @@ namespace PyPy_Console
                                         //create link for the big button in discord to youtube
                                         if (splitthiscrap[0].Contains("https://jd.pypy.moe/api/v1/videos/"))
                                         {
-                                            Console.WriteLine("[PYPY] " + song + " | Requested by " + name);
+                                            Console.WriteLine(song + " | Requested by " + name);
                                         }
                                         else
                                         {
-                                            Console.WriteLine("[PYPY] " + url + " | Requested by " + name);
+                                            Console.WriteLine(url + " | Requested by " + name);
                                         }
                                         if (discord)
                                         {
                                             client.SetPresence(new RichPresence()
                                             {
-                                                Details = Truncate(song,128),
+                                                Details = song,
                                                 State = "Requested by " + name,
                                                 Timestamps = new Timestamps()
                                                 {
@@ -297,7 +279,7 @@ namespace PyPy_Console
                                                 Assets = new Assets()
                                                 {
                                                     LargeImageKey = "pypy_",
-                                                    LargeImageText = "PyPyDance RPC by Zuwaii- https://github.com/ZuwaiiVR/PyPyDanceRPC",
+                                                    LargeImageText = "PyPy Dance Rich thing by Zuwaii- https://github.com/ZuwaiiVR/PyPyDanceRPC",
                                                     SmallImageKey = logo_
                                                 },
                                                 Buttons = new Button[]
