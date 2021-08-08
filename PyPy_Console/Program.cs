@@ -102,9 +102,11 @@ namespace PyPy_Console
             }
             //
             if (rpc_) Initialize();
+
             while (true)
             {
                 var logfile = directory.GetFiles("output_log_*.txt", SearchOption.TopDirectoryOnly).OrderByDescending(f => f.LastWriteTime).First();
+                
                 Console.OutputEncoding = System.Text.Encoding.UTF8;
                 Console.WriteLine(logfile.Name);
                 Console.WriteLine();
@@ -118,10 +120,8 @@ namespace PyPy_Console
 
         public static  void Initialize()
         { 
-            //client = new DiscordRpcClient("872555415186071552");
             client = new DiscordRpcClient(System.Text.Encoding.UTF8.GetString(System.Convert.FromBase64String("ODcyNTU1NDE1MTg2MDcxNTUy")));
-          
-            // client.Logger = new ConsoleLogger() { Level = LogLevel.Warning };
+           
             client.OnReady += (sender, e) =>
             {
                 Console.WriteLine("Connected! user {0}", e.User.Username);
@@ -199,7 +199,7 @@ namespace PyPy_Console
                                     Assets = new Assets()
                                     {
                                         LargeImageKey = "pypy_",
-                                        LargeImageText = "PyPy Dance Rich thing by Zuwaii- Available soon on Github",
+                                        LargeImageText = "PyPy Dance Rich thing by Zuwaii- https://github.com/ZuwaiiVR/PyPyDanceRPC",
                                         SmallImageKey = logo_
                                     },
                                 });
@@ -211,6 +211,7 @@ namespace PyPy_Console
                     {
                         using (var fs = new FileStream(filePath, FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
                         {
+                            
                             fs.Seek(lastReadLength, SeekOrigin.Begin);
                             var buffer = new byte[1024];
                             while (true)
@@ -221,7 +222,7 @@ namespace PyPy_Console
                                     break;
                  
                                 var text = Encoding.GetEncoding(65001).GetString(buffer, 0, bytesRead);
-
+                              
                                 if (text.Contains("X] VideoPlay(PyPyDance)") )
                                 {
                                     string abc = text.Substring(text.IndexOf("X] VideoPlay(PyPyDance)") + 23);
