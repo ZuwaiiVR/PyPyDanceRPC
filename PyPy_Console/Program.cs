@@ -46,8 +46,6 @@ namespace PyPy_Console
             Console.WriteLine("PyPyDance Discord Rich Presence " + ver);
             Console.WriteLine("Join the discord! http://jd.pypy.moe/discord");
             Console.WriteLine();
-            Console.WriteLine("Please add the command line args  \"VRChat.exe --enable-sdk-log-levels\" to let the magic work");
-            Console.WriteLine();
   
             string logpath = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + @"Low\VRChat\VRChat";
             string localpath = System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location);
