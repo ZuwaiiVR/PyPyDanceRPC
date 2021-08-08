@@ -1,0 +1,13 @@
+C:\Users\Zuwaii~\source\repos\PyPy_Console\PyPy_Console\bin\Debug\PyPy_Console.exe.config
+C:\Users\Zuwaii~\source\repos\PyPy_Console\PyPy_Console\bin\Debug\PyPy_Console.exe
+C:\Users\Zuwaii~\source\repos\PyPy_Console\PyPy_Console\bin\Debug\PyPy_Console.pdb
+C:\Users\Zuwaii~\source\repos\PyPy_Console\PyPy_Console\obj\Debug\PyPy_Console.csprojAssemblyReference.cache
+C:\Users\Zuwaii~\source\repos\PyPy_Console\PyPy_Console\obj\Debug\PyPy_Console.csproj.CoreCompileInputs.cache
+C:\Users\Zuwaii~\source\repos\PyPy_Console\PyPy_Console\obj\Debug\PyPy_Console.exe
+C:\Users\Zuwaii~\source\repos\PyPy_Console\PyPy_Console\obj\Debug\PyPy_Console.pdb
+C:\Users\Zuwaii~\source\repos\PyPy_Console\PyPy_Console\bin\Debug\DiscordRPC.dll
+C:\Users\Zuwaii~\source\repos\PyPy_Console\PyPy_Console\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Zuwaii~\source\repos\PyPy_Console\PyPy_Console\bin\Debug\DiscordRPC.pdb
+C:\Users\Zuwaii~\source\repos\PyPy_Console\PyPy_Console\bin\Debug\DiscordRPC.xml
+C:\Users\Zuwaii~\source\repos\PyPy_Console\PyPy_Console\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Zuwaii~\source\repos\PyPy_Console\PyPy_Console\obj\Debug\PyPy_Console.csproj.CopyComplete
