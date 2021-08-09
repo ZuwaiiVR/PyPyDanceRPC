@@ -11,6 +11,9 @@ Run VRChat ~~with command line "--enable-sdk-log-levels"~~ and go to PyPyDance w
 </br>
 After the song has finish playing, status will change to "idle", after 30 seconds, the discord rich presence status will be cleared.
 </br>
+You may disable VRChat's own discord rich presence so they won't overlay on each other.
+See how to do it here. https://docs.vrchat.com/docs/configuration-file#rich-presence
+
 # Config file.
 When there's no config file, the config file will be generated with the following settings.
 
