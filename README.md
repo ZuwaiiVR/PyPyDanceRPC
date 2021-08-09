@@ -1,7 +1,8 @@
+
 # PyPyDanceRPC
  A rich status for Discord while playing PyPyDance on VRChat. </br></br>
 ![Image of Yaktocat](https://github.com/ZuwaiiVR/PyPyDanceRPC/blob/main/Discord_3AAIQXExmh.png)
-![Image of Yaktocat](https://github.com/ZuwaiiVR/PyPyDanceRPC/blob/main/PyPy_Console_dLASVgksBM.png)
+![PyPy_Console_ZqUV0rRUVo](https://user-images.githubusercontent.com/9972076/128694232-82736efa-12a3-4b2c-8595-76cd6e48b5ae.png)
 
 # How to use
 Simple, get the latest release in the release page.
