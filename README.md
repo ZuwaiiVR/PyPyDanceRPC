@@ -35,4 +35,6 @@ https://github.com/Lachee/discord-rpc-csharp
 It's kinda a mess in the code, but I tried to clean up as much as possible.</br>
 There is a youtube button, to view the current video on youtube, it might in some cases that the youtube video is broken/removed/invalid.</br>
 Sometimes there could be a parse error, I fill fix this later on. </br></br>
-Thanks pypy & Natsumi-sama!
+I'm not any responsible for any harm that could cause by this tool, however it should not. The tool does not change or modify VRChat in anyway nor Discord. </br></br>
+
+Also Thanks to pypy & Natsumi-sama!
