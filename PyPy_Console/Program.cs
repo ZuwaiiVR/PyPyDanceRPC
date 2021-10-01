@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -14,7 +14,7 @@ namespace PyPy_Console
     class Program
     {
         public static DiscordRpcClient client;
-        static string ver = "v1.0b";
+        static string ver = "v1.0d";
         static string[] logo = {
 " ######          ######          ######                                       ######   ######    #####  ",
 " #     #  #   #  #     #  #   #  #     #    ##    #    #   ####   ######      #     #  #     #  #     # ",
@@ -46,6 +46,7 @@ namespace PyPy_Console
             Console.WriteLine("PyPyDance Discord Rich Presence " + ver);
             Console.WriteLine("Join the discord! http://jd.pypy.moe/discord");
             Console.WriteLine();
+            
   
             string logpath = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + @"Low\VRChat\VRChat";
             string localpath = System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location);
@@ -56,7 +57,7 @@ namespace PyPy_Console
             bool mylogolol = false;
             bool rpc_ = true;
             string[] configlayout = { "DiscordRPCEnabled=","LogSongsToFile=","Logo=" };
-            string[] configlayoutsave = { "DiscordRPCEnabled=true", "LogSongsToFile=false","Logo=true" };
+            string[] configlayoutsave = { "DiscordRPCEnabled=true", "LogSongsToFile=true","Logo=true" };
             if (!File.Exists(localpath + "/conf.ini"))
             {
                 //create file
@@ -102,15 +103,17 @@ namespace PyPy_Console
                 }
             }
             //
-            
+          
             if (rpc_) Initialize();
-
+           
             while (true)
             {
                 var logfile = directory.GetFiles("output_log_*.txt", SearchOption.TopDirectoryOnly).OrderByDescending(f => f.LastWriteTime).First();
                 Console.OutputEncoding = System.Text.Encoding.UTF8;
                 Console.WriteLine(logfile.Name);
                 Console.WriteLine();
+                Console.WriteLine("[PYPY] Waiting for event.");
+
                 pypymagic(logpath + "\\" + logfile.Name, save, mylogolol, rpc_);
             }
         }
@@ -255,9 +258,9 @@ namespace PyPy_Console
                                         }
 
                                         string url = "";
-                                        if (splitthiscrap[0].Contains("https://jd.pypy.moe/api/v1/videos/"))
+                                        if (splitthiscrap[0].Contains("://jd.pypy.moe/api/v1/videos/"))
                                         {
-                                            url = splitthiscrap[0].Replace("\"", "").Replace("https://jd.pypy.moe/api/v1/videos/", "http://youtu.be/").Replace(".mp4", "");
+                                            url = splitthiscrap[0].Replace("\"", "").Replace("http://jd.pypy.moe/api/v1/videos/", "http://youtu.be/").Replace(".mp4", "");
                                         }
                                         else
                                         {
@@ -271,15 +274,15 @@ namespace PyPy_Console
                                         dt = DateTime.UtcNow + TimeSpan.FromSeconds((long)float.Parse(splitthiscrap[2], System.Globalization.CultureInfo.InvariantCulture));
                                         has_time = true;
                                         clear_presence = false;
-                                        
+                                        DateTime dta = DateTime.Now;
                                         //create link for the big button in discord to youtube
-                                        if (splitthiscrap[0].Contains("https://jd.pypy.moe/api/v1/videos/"))
+                                        if (splitthiscrap[0].Contains("://jd.pypy.moe/api/v1/videos/"))
                                         {
-                                            Console.WriteLine("[PYPY] " + song + " | Requested by " + name);
+                                            Console.WriteLine("[PYPY] " + dta.ToString(System.Globalization.CultureInfo.InvariantCulture)+" "+ song + " | Requested by " + name);
                                         }
                                         else
                                         {
-                                            Console.WriteLine("[PYPY] " + url + " | Requested by " + name);
+                                            Console.WriteLine("[PYPY] " + dta.ToString(System.Globalization.CultureInfo.InvariantCulture) + " "+ url + " | Requested by " + name);
                                         }
                                         if (discord)
                                         {
@@ -309,8 +312,8 @@ namespace PyPy_Console
                                         {
                                             using (StreamWriter sw2 = File.AppendText(System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location) + @"/pypylog.txt"))
                                             {
-                                                DateTime dta = DateTime.Now;
-                                                if (!splitthiscrap[0].Contains("https://jd.pypy.moe/api/v1/videos/"))
+                                              //  DateTime dta = DateTime.Now;
+                                                if (!splitthiscrap[0].Contains("://jd.pypy.moe/api/v1/videos/"))
                                                 {
                                                     sw2.WriteLine(dta.ToString(System.Globalization.CultureInfo.InvariantCulture) + " | " + url + " (" + name + ")");
                                                 }
